@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Poogle — Search, Poogle Stool, Poogle Poop, Shitmini &amp; Poogle Crap | By Mr. Doo-doo</title>
+  <meta name="description" content="Poogle is an all-in-one web platform crafted by Mr. Doo-doo uniting Poogle Stool, Poogle Poop, Shitmini App &amp; Search, and Poogle Crap." />
+  <meta name="author" content="Mr. Doo-doo" />
+  <meta name="theme-color" content="#4285F4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="favicon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="min-h-screen flex flex-col bg-white dark:bg-[#202124] text-[#202124] dark:text-[#e8eaed] selection:bg-blue-500 selection:text-white">
+
+  <!-- TOP GLOBAL ECOSYSTEM BAR + GOOGLE HEADER -->
+  <header class="sticky top-0 z-40 w-full bg-white/95 dark:bg-[#202124]/95 backdrop-blur border-b border-gray-100 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-14 flex items-center justify-between gap-2">
+      <!-- Left: Brand + Integrated Platform Switcher Pills -->
+      <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-1">
+        <button type="button" data-launch-platform="poogle-home" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition shrink-0" title="Poogle Home">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="#ffffff" stroke="#dadce0" stroke-width="3"/>
+            <path d="M18 14h16c8 0 14 5 14 12.5S42 39 34 39h-7v11h-9V14zm9 17h6.5c3.5 0 5.5-2 5.5-4.5S37 22 33.5 22H27v9z" fill="#4285F4"/>
+            <path d="M18 14h16v8H27v9h-9V14z" fill="#EA4335"/>
+            <path d="M18 35h9v15h-9V35z" fill="#34A853"/>
+            <path d="M27 31h14c-1.5 5-6 8-11 8h-3v-8z" fill="#FBBC05"/>
+          </svg>
+          <span class="font-bold text-sm tracking-tight hidden sm:inline">
+            <span class="text-[#4285F4]">P</span><span class="text-[#EA4335]">o</span><span class="text-[#FBBC05]">o</span><span class="text-[#4285F4]">g</span><span class="text-[#34A853]">l</span><span class="text-[#EA4335]">e</span>
+          </span>
+        </button>
+
+        <div class="h-4 w-[1px] bg-gray-200 dark:bg-gray-700 hidden sm:block"></div>
+
+        <!-- 5 Integrated Ecosystem Navigation Pills -->
+        <nav aria-label="Poogle Integrated Platforms" class="flex items-center gap-1">
+          <button type="button" data-platform-tab="poogle" class="px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-medium transition shrink-0 bg-blue-600 text-white shadow-sm">
+            🔍 Poogle Search
+          </button>
+          <button type="button" data-platform-tab="stool" class="px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-medium transition shrink-0 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+            ☁️ Poogle Stool
+          </button>
+          <button type="button" data-platform-tab="poop" class="px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-medium transition shrink-0 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+            🚀 Poogle Poop
+          </button>
+          <button type="button" data-platform-tab="shitmini" class="px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-medium transition shrink-0 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+            ✦ Shitmini App &amp; Search
+          </button>
+          <button type="button" data-platform-tab="crap" class="px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-medium transition shrink-0 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+            🌐 Poogle Crap
+          </button>
+        </nav>
+      </div>
+
+      <!-- Right: Google Header Utilities (Theme, Waffle App Launcher, Mr. Doo-doo Avatar) -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0 relative">
+        <button type="button" class="theme-toggle-trigger p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition" title="Toggle Dark/Light Theme" aria-label="Toggle Dark or Light Theme">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </button>
+
+        <!-- 9-Dot Google Waffle App Launcher Button -->
+        <button type="button" id="waffle-menu-btn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition" title="Poogle Apps" aria-label="Poogle Apps Launcher">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"/>
+          </svg>
+        </button>
+
+        <!-- Developer Credit / User Profile Button -->
+        <button type="button" id="profile-menu-btn" class="flex items-center gap-1.5 p-0.5 pr-2 rounded-full border border-gray-200 dark:border-gray-700 hover:shadow-sm transition bg-gray-50 dark:bg-gray-800" title="Developer: Mr. Doo-doo">
+          <span class="w-7 h-7 rounded-full bg-gradient-to-tr from-[#4285F4] via-[#EA4335] to-[#FBBC05] text-white font-bold text-xs flex items-center justify-center">MD</span>
+          <span class="text-xs font-medium hidden md:inline">Mr. Doo-doo</span>
+        </button>
+
+        <!-- WAFFLE APP LAUNCHER POPOVER -->
+        <div id="waffle-menu-popover" class="hidden absolute right-0 top-12 w-80 sm:w-96 bg-white dark:bg-[#303134] rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 p-4 z-50">
+          <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 px-2 mb-3 flex items-center justify-between">
+            <span>Poogle Integrated Suite</span>
+            <span class="text-[10px] text-blue-600 dark:text-blue-400">By Mr. Doo-doo</span>
+          </div>
+          <div class="grid grid-cols-3 gap-2 text-center">
+            <button type="button" data-launch-platform="poogle-home" class="p-3 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700/60 flex flex-col items-center gap-1.5 transition">
+              <span class="w-11 h-11 rounded-full bg-blue-50 dark:bg-gray-800 flex items-center justify-center text-lg font-bold text-blue-600">P</span>
+              <span class="text-xs font-medium">Poogle</span>
+            </button>
+            <button type="button" data-launch-platform="stool" class="p-3 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700/60 flex flex-col items-center gap-1.5 transition">
+              <span class="w-11 h-11 rounded-full bg-sky-50 dark:bg-gray-800 flex items-center justify-center text-lg">☁️</span>
+              <span class="text-xs font-medium leading-tight">Poogle Stool</span>
+            </button>
+            <button type="button" data-launch-platform="poop" class="p-3 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700/60 flex flex-col items-center gap-1.5 transition">
+              <span class="w-11 h-11 rounded-full bg-purple-50 dark:bg-gray-800 flex items-center justify-center text-lg">🚀</span>
+              <span class="text-xs font-medium leading-tight">Poogle Poop</span>
+            </button>
+            <button type="button" data-launch-platform="shitmini" class="p-3 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700/60 flex flex-col items-center gap-1.5 transition">
+              <span class="w-11 h-11 rounded-full bg-pink-50 dark:bg-gray-800 flex items-center justify-center text-lg">✦</span>
+              <span class="text-xs font-medium leading-tight">Shitmini App</span>
+            </button>
+            <button type="button" data-launch-platform="shitmini" data-launch-mode="search_ai" class="p-3 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700/60 flex flex-col items-center gap-1.5 transition">
+              <span class="w-11 h-11 rounded-full bg-indigo-50 dark:bg-gray-800 flex items-center justify-center text-lg">🔮</span>
+              <span class="text-xs font-medium leading-tight">AI Mode Search</span>
+            </button>
+            <button type="button" data-launch-platform="crap" class="p-3 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700/60 flex flex-col items-center gap-1.5 transition">
+              <span class="w-11 h-11 rounded-full bg-emerald-50 dark:bg-gray-800 flex items-center justify-center text-lg">🌐</span>
+              <span class="text-xs font-medium leading-tight">Poogle Crap</span>
+            </button>
+          </div>
+          <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between px-2">
+            <span class="text-[11px] text-gray-500 dark:text-gray-400">Google AI Ultra &amp; Enterprise Ready</span>
+            <button type="button" data-launch-platform="about" class="text-xs font-medium text-blue-600 dark:text-blue-400 hover:underline">About Mr. Doo-doo</button>
+          </div>
+        </div>
+
+        <!-- PROFILE / DEVELOPER CREDIT POPOVER -->
+        <div id="profile-menu-popover" class="hidden absolute right-0 top-12 w-80 bg-white dark:bg-[#303134] rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 p-5 z-50 text-center">
+          <div class="text-xs text-gray-500 dark:text-gray-400 mb-2">mr.doodoo@poogle.dev</div>
+          <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-tr from-[#4285F4] via-[#EA4335] to-[#FBBC05] text-white font-bold text-xl flex items-center justify-center shadow-md mb-2">
+            MD
+          </div>
+          <div class="font-bold text-base">Hi, Mr. Doo-doo!</div>
+          <div class="inline-flex items-center gap-1 text-[11px] px-2.5 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 font-semibold mt-1 mb-4">
+            ✦ Google AI Pro &amp; Ultra Architect
+          </div>
+          <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+            Lead Developer &amp; Creator of <strong>Poogle</strong>, <strong>Poogle Stool</strong>, <strong>Poogle Poop</strong>, <strong>Shitmini App &amp; Search</strong>, and <strong>Poogle Crap</strong>.
+          </p>
+          <button type="button" data-launch-platform="about" class="w-full py-2 rounded-full border border-gray-300 dark:border-gray-600 text-xs font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+            View Full Developer Credits
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 0: PARENT WEBSITE — POOGLE (GOOGLE SEARCH & ECOSYSTEM HUB)       -->
+  <!-- ===================================================================== -->
+  <main id="platform-view-poogle" class="flex-1 flex flex-col">
+
+    <!-- SUBVIEW A: POOGLE HOME SCREEN (Identical to Google Search Home) -->
+    <section id="poogle-home-section" class="flex-1 flex flex-col items-center justify-center px-4 py-8 sm:py-14">
+      <!-- Multi-Color Poogle Wordmark -->
+      <div class="poogle-logo-wrap text-center mb-6 sm:mb-8 select-none">
+        <h1 class="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight" aria-label="Poogle">
+          <span class="poogle-logo-letter text-[#4285F4]">P</span><span class="poogle-logo-letter text-[#EA4335]">o</span><span class="poogle-logo-letter text-[#FBBC05]">o</span><span class="poogle-logo-letter text-[#4285F4]">g</span><span class="poogle-logo-letter text-[#34A853]">l</span><span class="poogle-logo-letter text-[#EA4335]">e</span>
+        </h1>
+        <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-2">
+          The Unified Search, Cloud, Agentic IDE, AI &amp; Browser Suite • By <strong class="text-gray-700 dark:text-gray-200">Mr. Doo-doo</strong>
+        </p>
+      </div>
+
+      <!-- Authentic Pill Search Bar -->
+      <div class="w-full max-w-[584px] relative mb-7">
+        <form id="home-search-form" class="poogle-search-pill flex items-center w-full h-12 sm:h-[46px] rounded-full px-4 gap-2.5">
+          <!-- Search Magnifying Glass -->
+          <svg class="w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"/>
+          </svg>
+
+          <input
+            id="home-search-input"
+            type="text"
+            autocomplete="off"
+            placeholder="Search Poogle or type a command across Stool, Poop, Shitmini &amp; Crap..."
+            class="w-full bg-transparent text-sm sm:text-base text-gray-900 dark:text-gray-100 focus:outline-none"
+            aria-label="Search Poogle"
+          />
+
+          <!-- Clear Input X Button -->
+          <button type="button" id="home-clear-btn" class="hidden text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 px-1 text-lg" title="Clear search" aria-label="Clear search">
+            ×
+          </button>
+
+          <!-- Voice Search Microphone Trigger -->
+          <button type="button" class="voice-search-trigger p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition shrink-0" title="Search by voice" aria-label="Search by voice">
+            <svg class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z"/>
+              <path fill="#34A853" d="M11 18.08h2v3.92h-2z"/>
+              <path fill="#FBBC05" d="M7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45 0.56 2.42 1.47 3.38v0.32l-1.15 1.18z"/>
+              <path fill="#EA4335" d="M12 16.93a4.97 5.25 0 0 1 -3.54 -1.55l-1.41 1.49c1.26 1.34 3.02 2.13 4.95 2.13 3.87 0 6.99-2.92 6.99-7h-1.99c0 2.92-2.24 4.93-5 4.93z"/>
+            </svg>
+          </button>
+
+          <!-- Poogle Lens Visual Camera Trigger -->
+          <button type="button" class="lens-search-trigger p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition shrink-0" title="Search by image with Poogle Lens" aria-label="Search by image">
+            <svg class="w-5 h-5" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3.2" fill="#4285F4"/>
+              <path fill="#EA4335" d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+            </svg>
+          </button>
+
+          <!-- Direct AI Mode Pill Button (Shitmini AI Mode in Search) -->
+          <button type="button" data-launch-platform="shitmini" data-launch-mode="search_ai" class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white hover:opacity-95 transition shrink-0" title="Launch AI Mode in Search">
+            <span>✦</span><span>AI Mode</span>
+          </button>
+        </form>
+
+        <!-- Autocomplete Dropdown -->
+        <div id="home-autocomplete-dropdown" class="hidden absolute left-0 right-0 top-13 mt-1 bg-white dark:bg-[#303134] rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-30"></div>
+      </div>
+
+      <!-- Classic Google Center Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+        <button type="button" data-autocomplete-query="Poogle Unified Ecosystem" class="poogle-btn">
+          Poogle Search
+        </button>
+        <button type="button" id="feeling-flush-btn" class="poogle-btn">
+          I'm Feeling Flush
+        </button>
+        <button type="button" data-launch-platform="shitmini" data-launch-mode="search_ai" class="poogle-btn flex items-center gap-1.5">
+          <span class="text-purple-600 dark:text-purple-400 font-bold">✦</span>
+          <span>Shitmini AI Mode</span>
+        </button>
+      </div>
+
+      <!-- 4 Integrated Platform Showcase Cards (Directly Accessible from Parent Website) -->
+      <div class="w-full max-w-5xl">
+        <div class="text-center text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-3">
+          Integrated Poogle Platforms — Click Any Platform to Launch Full Workspace
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          <!-- Card 1: Poogle Stool -->
+          <div class="group rounded-2xl border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-[#303134]/70 p-4 hover:shadow-lg hover:border-blue-400 dark:hover:border-blue-500 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="w-9 h-9 rounded-xl bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center text-lg">☁️</span>
+                <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">Google Cloud Clone</span>
+              </div>
+              <h2 class="font-bold text-base text-gray-900 dark:text-gray-100">Poogle Stool</h2>
+              <p class="text-xs text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">
+                Available on <strong>Poogle Stool</strong> (Google Cloud) for enterprise developers and builders. Includes Vertex AI Model Garden &amp; Cloud Shell.
+              </p>
+            </div>
+            <button type="button" data-launch-platform="stool" class="mt-4 w-full py-2 rounded-xl bg-blue-50 dark:bg-gray-800 hover:bg-blue-600 hover:text-white text-blue-600 dark:text-blue-400 text-xs font-semibold transition">
+              Open Poogle Stool Console &rarr;
+            </button>
+          </div>
+
+          <!-- Card 2: Poogle Poop -->
+          <div class="group rounded-2xl border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-[#303134]/70 p-4 hover:shadow-lg hover:border-purple-400 dark:hover:border-purple-500 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="w-9 h-9 rounded-xl bg-purple-50 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg">🚀</span>
+                <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300">Antigravity Clone</span>
+              </div>
+              <h2 class="font-bold text-base text-gray-900 dark:text-gray-100">Poogle Poop</h2>
+              <p class="text-xs text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">
+                Available for <strong>Google AI Ultra</strong> subscribers inside Poogle's agentic development platform (standalone or via <strong>Android Studio Canary</strong>).
+              </p>
+            </div>
+            <button type="button" data-launch-platform="poop" class="mt-4 w-full py-2 rounded-xl bg-purple-50 dark:bg-gray-800 hover:bg-purple-600 hover:text-white text-purple-600 dark:text-purple-400 text-xs font-semibold transition">
+              Launch Poogle Poop IDE &rarr;
+            </button>
+          </div>
+
+          <!-- Card 3: Shitmini App & Search -->
+          <div class="group rounded-2xl border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-[#303134]/70 p-4 hover:shadow-lg hover:border-pink-400 dark:hover:border-pink-500 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="w-9 h-9 rounded-xl bg-pink-50 dark:bg-pink-900/40 text-pink-600 dark:text-pink-400 flex items-center justify-center text-lg">✦</span>
+                <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-pink-100 dark:bg-pink-900/50 text-pink-700 dark:text-pink-300">Gemini App &amp; Search</span>
+              </div>
+              <h2 class="font-bold text-base text-gray-900 dark:text-gray-100">Shitmini App &amp; Search</h2>
+              <p class="text-xs text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">
+                Available for <strong>Google AI Pro and Ultra</strong> subscribers inside the Shitmini app and <strong>AI Mode in Search</strong>.
+              </p>
+            </div>
+            <button type="button" data-launch-platform="shitmini" class="mt-4 w-full py-2 rounded-xl bg-pink-50 dark:bg-gray-800 hover:bg-pink-600 hover:text-white text-pink-600 dark:text-pink-400 text-xs font-semibold transition">
+              Open Shitmini &amp; AI Mode &rarr;
+            </button>
+          </div>
+
+          <!-- Card 4: Poogle Crap -->
+          <div class="group rounded-2xl border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-[#303134]/70 p-4 hover:shadow-lg hover:border-emerald-400 dark:hover:border-emerald-500 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">🌐</span>
+                <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">Google Chrome Clone</span>
+              </div>
+              <h2 class="font-bold text-base text-gray-900 dark:text-gray-100">Poogle Crap</h2>
+              <p class="text-xs text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">
+                Accessible directly inside <strong>Chrome</strong> (Poogle Crap) for quick queries via the omnibox address bar and AI Side Panel.
+              </p>
+            </div>
+            <button type="button" data-launch-platform="crap" class="mt-4 w-full py-2 rounded-xl bg-emerald-50 dark:bg-gray-800 hover:bg-emerald-600 hover:text-white text-emerald-600 dark:text-emerald-400 text-xs font-semibold transition">
+              Open Poogle Crap Browser &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Language Bar -->
+      <div class="mt-8 text-xs text-gray-500 dark:text-gray-400 text-center">
+        Poogle offered in:
+        <button type="button" data-autocomplete-query="Poogle Ecosystem" class="text-blue-700 dark:text-blue-400 hover:underline ml-1">English</button>
+        <button type="button" data-autocomplete-query="Poogle Stool Cloud" class="text-blue-700 dark:text-blue-400 hover:underline ml-2">हिन्दी</button>
+        <button type="button" data-autocomplete-query="Poogle Poop Canary" class="text-blue-700 dark:text-blue-400 hover:underline ml-2">বাংলা</button>
+        <button type="button" data-autocomplete-query="Shitmini AI Mode" class="text-blue-700 dark:text-blue-400 hover:underline ml-2">తెలుగు</button>
+      </div>
+    </section>
+
+    <!-- SUBVIEW B: POOGLE SEARCH RESULTS PAGE (SERP) -->
+    <section id="poogle-serp-section" class="hidden flex-1 flex flex-col">
+      <!-- SERP Top Search Bar & Filter Tabs -->
+      <div class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-[#202124] pt-4 px-4 sm:px-8">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+          <button type="button" data-launch-platform="poogle-home" class="text-2xl font-bold tracking-tight shrink-0 text-left">
+            <span class="text-[#4285F4]">P</span><span class="text-[#EA4335]">o</span><span class="text-[#FBBC05]">o</span><span class="text-[#4285F4]">g</span><span class="text-[#34A853]">l</span><span class="text-[#EA4335]">e</span>
+          </button>
+          <form id="serp-search-form" class="poogle-search-pill flex items-center w-full max-w-2xl h-11 rounded-full px-4 gap-2">
+            <input id="serp-search-input" type="text" class="w-full bg-transparent text-sm focus:outline-none" aria-label="Search Poogle results" />
+            <button type="button" class="voice-search-trigger p-1 text-blue-600" title="Voice Search">🎙️</button>
+            <button type="submit" class="p-1 text-blue-600 font-bold" title="Search">🔍</button>
+          </form>
+        </div>
+
+        <!-- SERP Filter Tabs -->
+        <div class="max-w-6xl mx-auto flex items-center gap-5 overflow-x-auto no-scrollbar mt-4 text-xs sm:text-sm">
+          <button type="button" data-serp-tab="all" class="pb-2.5 border-b-2 border-blue-600 text-blue-600 font-semibold shrink-0">All</button>
+          <button type="button" data-serp-tab="aimode" class="pb-2.5 border-b-2 border-transparent text-gray-600 dark:text-gray-400 hover:text-blue-600 shrink-0 flex items-center gap-1">
+            <span>✦</span><span>AI Mode (Shitmini)</span>
+          </button>
+          <button type="button" data-serp-tab="images" class="pb-2.5 border-b-2 border-transparent text-gray-600 dark:text-gray-400 hover:text-blue-600 shrink-0">Images</button>
+          <button type="button" data-launch-platform="stool" class="pb-2.5 border-b-2 border-transparent text-gray-600 dark:text-gray-400 hover:text-blue-600 shrink-0">☁️ Poogle Stool</button>
+          <button type="button" data-launch-platform="poop" class="pb-2.5 border-b-2 border-transparent text-gray-600 dark:text-gray-400 hover:text-blue-600 shrink-0">🚀 Poogle Poop</button>
+          <button type="button" data-launch-platform="crap" class="pb-2.5 border-b-2 border-transparent text-gray-600 dark:text-gray-400 hover:text-blue-600 shrink-0">🌐 Poogle Crap</button>
+        </div>
+      </div>
+
+      <!-- SERP Main Content Grid -->
+      <div class="max-w-6xl mx-auto w-full px-4 sm:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-8">
+          <div class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+            About 4,820,000 results (0.14 seconds) • Verified by <strong>Mr. Doo-doo</strong>
+          </div>
+          <div id="serp-results-container"></div>
+        </div>
+
+        <!-- SERP Knowledge Graph Card -->
+        <aside class="lg:col-span-4">
+          <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#303134]/60 p-5 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#4285F4] via-[#EA4335] to-[#34A853] text-white font-bold text-2xl flex items-center justify-center">P</div>
+              <div>
+                <h2 class="font-bold text-lg leading-tight">Poogle Ecosystem</h2>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Unified Platform • Netlify Ready</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              <strong>Poogle</strong> is a pixel-faithful, responsive clone of the Google app integrating four specialized platforms: <strong>Poogle Stool</strong>, <strong>Poogle Poop</strong>, <strong>Shitmini App &amp; Search</strong>, and <strong>Poogle Crap</strong>.
+            </p>
+            <div class="space-y-2 text-xs border-t border-gray-100 dark:border-gray-700 pt-3">
+              <div class="flex justify-between"><span class="text-gray-500">Lead Developer:</span><strong class="text-blue-600 dark:text-blue-400">Mr. Doo-doo</strong></div>
+              <div class="flex justify-between"><span class="text-gray-500">Cloud Suite:</span><span>Poogle Stool (Google Cloud)</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Agentic IDE:</span><span>Poogle Poop (Antigravity)</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">AI &amp; Search:</span><span>Shitmini App &amp; Search</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Quick Browser:</span><span>Poogle Crap (Chrome)</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 1: POOGLE STOOL (GOOGLE CLOUD CLONE FOR ENTERPRISE BUILDERS)     -->
+  <!-- ===================================================================== -->
+  <section id="platform-view-stool" class="hidden flex-1 flex flex-col bg-gray-50 dark:bg-[#171717]">
+    <!-- Cloud Console Subheader -->
+    <div class="bg-[#1a73e8] text-white px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <span class="font-bold text-sm sm:text-base flex items-center gap-2">
+          <span>☁️</span><span>Poogle Stool Console</span>
+        </span>
+        <span class="text-[11px] bg-white/20 px-2.5 py-0.5 rounded-full font-mono">Project: poogle-enterprise-prod-01</span>
+        <span class="hidden md:inline text-xs opacity-90">Available on Google Cloud for enterprise developers and builders</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button type="button" id="stool-shell-toggle-btn" class="px-3 py-1 rounded bg-white/15 hover:bg-white/25 text-xs font-mono flex items-center gap-1.5 transition">
+          <span>&gt;_</span><span>Cloud Shell</span>
+        </button>
+        <span class="text-xs bg-emerald-500/30 border border-emerald-300/40 px-2.5 py-0.5 rounded-full">IAM Owner: Mr. Doo-doo</span>
+      </div>
+    </div>
+
+    <!-- Cloud Main Grid -->
+    <div class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Left Cloud Navigation -->
+      <aside class="lg:col-span-3 space-y-1.5">
+        <div class="p-3 rounded-2xl bg-white dark:bg-[#202124] border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div class="text-[11px] font-bold uppercase tracking-wider text-gray-400 px-3 mb-2">Enterprise Services</div>
+          <button type="button" data-stool-nav="dashboard" class="w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-2.5 transition">
+            <span>📊</span><span>Cloud Overview Dashboard</span>
+          </button>
+          <button type="button" data-stool-nav="vertex" class="w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-2.5 transition">
+            <span>✦</span><span>Vertex AI &amp; Shitmini Models</span>
+          </button>
+          <button type="button" data-stool-nav="compute" class="w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-2.5 transition">
+            <span>🖥️</span><span>Stool Compute &amp; GKE Clusters</span>
+          </button>
+          <button type="button" data-stool-nav="storage" class="w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-2.5 transition">
+            <span>🗄️</span><span>BigStool Data Warehouse</span>
+          </button>
+          <button type="button" data-stool-nav="iam" class="w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-2.5 transition">
+            <span>🔐</span><span>APIs, Keys &amp; IAM Admin</span>
+          </button>
+        </div>
+
+        <!-- Enterprise API Key Card -->
+        <div class="p-4 rounded-2xl bg-white dark:bg-[#202124] border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div class="text-xs font-bold text-gray-800 dark:text-gray-200 mb-1">Enterprise Builder Credentials</div>
+          <p class="text-[11px] text-gray-500 dark:text-gray-400 mb-2">Use this key to authenticate Poogle Stool SDKs &amp; Vertex AI endpoints.</p>
+          <div class="p-2 rounded bg-gray-100 dark:bg-gray-900 font-mono text-[11px] truncate mb-2.5">
+            AIzaSyPoogleStool-99xDooDooEnterpriseKey2026
+          </div>
+          <button type="button" id="stool-copy-key-btn" class="w-full py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium transition">
+            Copy Enterprise API Key
+          </button>
+        </div>
+      </aside>
+
+      <!-- Right Cloud Workspace -->
+      <div class="lg:col-span-9 space-y-6">
+        <!-- Metrics Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-2xl bg-white dark:bg-[#202124] border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="text-xs text-gray-500">Global API Requests (24H)</div>
+            <div class="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-1">148.9M</div>
+            <div class="text-[11px] text-emerald-600 mt-1">▲ 99.999% Enterprise SLA • 0 Errors</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white dark:bg-[#202124] border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="text-xs text-gray-500">Active Vertex AI Endpoints</div>
+            <div class="text-2xl font-bold text-purple-600 dark:text-purple-400 mt-1">12 Clusters</div>
+            <div class="text-[11px] text-gray-500 mt-1">Median P95 Latency: 118 ms</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white dark:bg-[#202124] border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="text-xs text-gray-500">Principal Cloud Architect</div>
+            <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mt-1">Mr. Doo-doo</div>
+            <div class="text-[11px] text-gray-500 mt-1">Tier: Enterprise Builder Unlimited</div>
+          </div>
+        </div>
+
+        <!-- Vertex AI Model Garden Table -->
+        <div class="rounded-2xl bg-white dark:bg-[#202124] border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+          <div class="px-5 py-4 border-b border-gray-100 dark:border-gray-800 flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <h2 class="font-bold text-base">Poogle Stool — Enterprise Model Garden &amp; Builder Services</h2>
+              <p class="text-xs text-gray-500 dark:text-gray-400">Available on Google Cloud (Poogle Stool) for enterprise developers and builders</p>
+            </div>
+            <button type="button" data-launch-platform="poop" class="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+              Open in Poogle Poop Agentic IDE &rarr;
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs sm:text-sm">
+              <thead class="bg-gray-50 dark:bg-gray-800/60 text-gray-500 dark:text-gray-400 uppercase text-[11px]">
+                <tr>
+                  <th class="py-2.5 px-4">Enterprise Model / Service</th>
+                  <th class="py-2.5 px-4">Context Window</th>
+                  <th class="py-2.5 px-4">Throughput Quota</th>
+                  <th class="py-2.5 px-4">P95 Latency</th>
+                  <th class="py-2.5 px-4">Status</th>
+                  <th class="py-2.5 px-4 text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody id="stool-models-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Interactive Cloud Shell Drawer -->
+        <div id="stool-cloud-shell-drawer" class="rounded-2xl bg-gray-950 text-gray-100 border border-gray-800 shadow-lg overflow-hidden">
+          <div class="px-4 py-2 bg-gray-900 border-b border-gray-800 flex items-center justify-between text-xs font-mono">
+            <span>&gt;_ Poogle Stool Cloud Shell — mr_doodoo@poogle-enterprise-prod-01</span>
+            <span class="text-emerald-400">● Connected</span>
+          </div>
+          <div id="stool-shell-output" class="p-4 h-40 overflow-y-auto space-y-1 bg-gray-950"></div>
+          <form id="stool-shell-form" class="flex items-center border-t border-gray-800 bg-gray-900 px-3 py-2 gap-2">
+            <span class="font-mono text-xs text-emerald-400 shrink-0">$</span>
+            <input id="stool-shell-input" type="text" placeholder="Type a command (e.g. help, gcloud app deploy, stool status, whoami, clear)..." class="w-full bg-transparent text-xs font-mono text-white focus:outline-none" />
+            <button type="submit" class="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium shrink-0">Run</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 2: POOGLE POOP (GOOGLE ANTIGRAVITY CLONE — AI ULTRA & CANARY)    -->
+  <!-- ===================================================================== -->
+  <section id="platform-view-poop" class="hidden flex-1 flex flex-col bg-[#0d1117] text-gray-100">
+    <!-- Antigravity Top Header -->
+    <div class="bg-[#161b22] border-b border-gray-800 px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center font-bold text-sm">🚀</span>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-sm sm:text-base text-white">Poogle Poop</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold uppercase">Google AI Ultra Subscriber</span>
+          </div>
+          <div id="poop-ide-mode-label" class="text-[11px] text-gray-400">
+            Poogle Poop Standalone Agentic Studio • Google AI Ultra Subscriber Edition
+          </div>
+        </div>
+      </div>
+
+      <!-- Mode Switcher: Standalone vs Android Studio Canary -->
+      <div class="flex flex-wrap items-center gap-2">
+        <div class="inline-flex rounded-xl bg-gray-900 p-1 border border-gray-800">
+          <button type="button" data-poop-mode="standalone" class="px-3 py-1 rounded-lg text-xs font-medium transition bg-purple-600 text-white">
+            Standalone Agentic Platform
+          </button>
+          <button type="button" data-poop-mode="canary" class="px-3 py-1 rounded-lg text-xs font-medium transition text-gray-300 hover:bg-gray-800">
+            🤖 Android Studio Canary
+          </button>
+        </div>
+        <button type="button" id="poop-run-canary-btn" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition">
+          ▶ Run Agent Verifier
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Pane Switcher Tabs (Visible on small screens so UI never breaks) -->
+    <div class="flex lg:hidden border-b border-gray-800 bg-[#161b22] px-4">
+      <button type="button" data-poop-pane="agents" class="flex-1 py-2.5 text-xs font-semibold text-center border-b-2 border-purple-500 text-purple-400">1. Agents</button>
+      <button type="button" data-poop-pane="editor" class="flex-1 py-2.5 text-xs font-semibold text-center text-gray-400">2. Code Canvas</button>
+      <button type="button" data-poop-pane="preview" class="flex-1 py-2.5 text-xs font-semibold text-center text-gray-400">3. Canary Emulator</button>
+    </div>
+
+    <!-- 3-Pane Agentic IDE Workspace -->
+    <div class="flex-1 grid grid-cols-1 lg:grid-cols-12 min-h-[540px]">
+      <!-- Left Pane: Multi-Agent Orchestrator -->
+      <div id="poop-pane-agents" class="lg:col-span-3 border-r border-gray-800 p-4 flex flex-col justify-between bg-[#0d1117]">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-purple-400 mb-1">Agentic Mission Control</div>
+          <p class="text-[11px] text-gray-400 mb-3">Available for Google AI Ultra subscribers standalone or via Android Studio Canary.</p>
+          <div id="poop-agent-list" class="space-y-2.5 max-h-80 overflow-y-auto pr-1"></div>
+        </div>
+
+        <form id="poop-agent-form" class="mt-4 pt-3 border-t border-gray-800">
+          <label for="poop-agent-input" class="block text-[11px] text-gray-400 mb-1.5">Dispatch New Autonomous Coding Task:</label>
+          <div class="flex gap-1.5">
+            <input id="poop-agent-input" type="text" placeholder="e.g. Optimize Jetpack Compose layout..." class="w-full rounded-lg bg-gray-900 border border-gray-700 px-3 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500" />
+            <button type="submit" class="px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold shrink-0">Go</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Center Pane: Code Editor & Live Agent Diff -->
+      <div id="poop-pane-editor" class="lg:col-span-6 border-r border-gray-800 flex flex-col bg-[#0d1117]">
+        <!-- File Tabs -->
+        <div class="flex items-center justify-between bg-[#161b22] px-3 border-b border-gray-800 overflow-x-auto no-scrollbar">
+          <div class="flex items-center">
+            <button type="button" data-poop-file="AgentWorkflow.ts" class="px-3.5 py-2.5 text-xs font-mono border-b-2 border-purple-500 text-purple-400 bg-gray-900">AgentWorkflow.ts</button>
+            <button type="button" data-poop-file="MainActivity.kt" class="px-3.5 py-2.5 text-xs font-mono text-gray-400 hover:text-white">MainActivity.kt</button>
+            <button type="button" data-poop-file="poogle_config.json" class="px-3.5 py-2.5 text-xs font-mono text-gray-400 hover:text-white">poogle_config.json</button>
+          </div>
+          <button type="button" id="poop-accept-diff-btn" class="my-1 px-2.5 py-1 rounded bg-purple-600/30 hover:bg-purple-600 text-purple-200 hover:text-white border border-purple-500/40 text-[11px] font-medium transition shrink-0">
+            ✓ Accept Agent Diff
+          </button>
+        </div>
+
+        <!-- Editable Code Area -->
+        <textarea id="poop-code-editor" aria-label="Poogle Poop Code Editor" class="flex-1 w-full p-4 bg-[#0d1117] text-emerald-300 font-mono text-xs sm:text-sm leading-relaxed focus:outline-none resize-none min-h-[320px]"></textarea>
+
+        <!-- Bottom Status Bar -->
+        <div class="px-4 py-2 bg-[#161b22] border-t border-gray-800 flex flex-wrap items-center justify-between text-[11px] text-gray-400 font-mono">
+          <span id="poop-emulator-status">✓ Agentic AST Sync Active • 0 Warnings • Architect: Mr. Doo-doo</span>
+          <span>UTF-8 • Kotlin / TypeScript • AI Ultra</span>
+        </div>
+      </div>
+
+      <!-- Right Pane: Android Studio Canary Device Emulator Preview -->
+      <div id="poop-pane-preview" class="lg:col-span-3 p-4 flex flex-col items-center justify-between bg-[#161b22]/60">
+        <div class="w-full flex items-center justify-between text-xs text-gray-400 mb-2">
+          <span class="font-semibold text-white">📱 Android Canary Emulator</span>
+          <span class="text-[10px] font-mono text-emerald-400">API 36 Canary</span>
+        </div>
+
+        <!-- Simulated Mobile Device Frame -->
+        <div class="w-full max-w-[240px] rounded-[28px] border-4 border-gray-700 bg-gray-900 p-3 shadow-2xl my-auto">
+          <div class="w-12 h-1.5 bg-gray-700 rounded-full mx-auto mb-3"></div>
+          <div class="rounded-2xl bg-white text-gray-900 p-3 text-center space-y-2">
+            <div class="text-lg font-bold">
+              <span class="text-[#4285F4]">P</span><span class="text-[#EA4335]">o</span><span class="text-[#FBBC05]">o</span><span class="text-[#4285F4]">g</span><span class="text-[#34A853]">l</span><span class="text-[#EA4335]">e</span>
+            </div>
+            <div class="text-[10px] text-gray-500">Live Canary Build • Mr. Doo-doo</div>
+            <div class="p-2 rounded-xl bg-purple-50 border border-purple-200 text-[10px] text-purple-800 font-medium">
+              ✓ Responsive UI Verified (320px — 4K)
+            </div>
+            <div class="grid grid-cols-2 gap-1.5 text-[10px] font-semibold">
+              <div class="p-1.5 rounded bg-blue-50 text-blue-700">Stool Cloud</div>
+              <div class="p-1.5 rounded bg-purple-50 text-purple-700">Poop Agent</div>
+              <div class="p-1.5 rounded bg-pink-50 text-pink-700">Shitmini AI</div>
+              <div class="p-1.5 rounded bg-emerald-50 text-emerald-700">Crap Browser</div>
+            </div>
+          </div>
+          <div class="w-16 h-1 bg-gray-600 rounded-full mx-auto mt-3"></div>
+        </div>
+
+        <div class="w-full mt-3 text-[11px] text-gray-400 text-center">
+          Connected to <strong>Android Studio Canary</strong> &amp; Standalone Agentic Runtime
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 3: SHITMINI APP & SEARCH (GEMINI APP & AI MODE IN SEARCH CLONE)  -->
+  <!-- ===================================================================== -->
+  <section id="platform-view-shitmini" class="hidden flex-1 flex flex-col bg-gray-50 dark:bg-[#131314]">
+    <!-- Shitmini Top Bar -->
+    <div class="bg-white dark:bg-[#1e1f20] border-b border-gray-200 dark:border-gray-800 px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-600 via-purple-500 to-red-500 text-white font-bold flex items-center justify-center">✦</span>
+        <div>
+          <div class="flex items-center gap-2">
+            <h2 class="font-bold text-base sm:text-lg shitmini-gradient-text">Shitmini App &amp; Search</h2>
+            <button type="button" id="shitmini-tier-badge" class="text-[11px] px-2.5 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 font-semibold" title="Click to toggle between AI Pro and AI Ultra">
+              Google AI Ultra Subscriber
+            </button>
+          </div>
+          <p class="text-[11px] text-gray-500 dark:text-gray-400">
+            Available for Google AI Pro and Ultra subscribers inside the Shitmini app and AI Mode in Search
+          </p>
+        </div>
+      </div>
+
+      <!-- Mode Switcher: Shitmini App vs AI Mode in Search -->
+      <div class="flex items-center gap-2">
+        <div class="inline-flex rounded-full bg-gray-100 dark:bg-gray-800 p-1 border border-gray-200 dark:border-gray-700">
+          <button type="button" data-shitmini-mode="app" class="px-3.5 py-1 rounded-full text-xs font-semibold transition bg-blue-600 text-white">
+            ✦ Shitmini App
+          </button>
+          <button type="button" data-shitmini-mode="search_ai" class="px-3.5 py-1 rounded-full text-xs font-semibold transition text-gray-600 dark:text-gray-300">
+            🔍 AI Mode in Search
+          </button>
+        </div>
+        <button type="button" id="shitmini-new-chat-btn" class="px-3 py-1.5 rounded-full border border-gray-300 dark:border-gray-700 text-xs font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          + New Session
+        </button>
+      </div>
+    </div>
+
+    <!-- Shitmini Main Conversational & AI Mode Workspace -->
+    <div class="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 py-6 flex flex-col justify-between">
+      <!-- Greeting & Quick Suggestion Chips -->
+      <div>
+        <div class="mb-5">
+          <div class="text-2xl sm:text-3xl font-bold shitmini-gradient-text">Hello, Builder &amp; Mr. Doo-doo</div>
+          <div class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">
+            Ask complex questions, trigger Deep Research, or explore AI Mode in Search.
+          </div>
+        </div>
+
+        <!-- Prompt Chips -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-6">
+          <button type="button" data-shitmini-chip="Compare Poogle Stool enterprise cloud features with Poogle Poop agentic workflows" class="text-left p-3 rounded-2xl bg-white dark:bg-[#1e1f20] border border-gray-200 dark:border-gray-800 hover:border-blue-400 transition text-xs">
+            <div class="font-semibold text-blue-600 dark:text-blue-400 mb-0.5">☁️ Cloud &amp; Agents</div>
+            <div class="text-gray-600 dark:text-gray-300">Compare Poogle Stool &amp; Poogle Poop workflows</div>
+          </button>
+          <button type="button" data-shitmini-chip="How does AI Mode in Search work for Google AI Pro and Ultra subscribers?" class="text-left p-3 rounded-2xl bg-white dark:bg-[#1e1f20] border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition text-xs">
+            <div class="font-semibold text-purple-600 dark:text-purple-400 mb-0.5">🔮 AI Mode in Search</div>
+            <div class="text-gray-600 dark:text-gray-300">Explore Pro &amp; Ultra deep reasoning in Search</div>
+          </button>
+          <button type="button" data-shitmini-chip="Show how Poogle Crap runs instant quick queries inside Chrome" class="text-left p-3 rounded-2xl bg-white dark:bg-[#1e1f20] border border-gray-200 dark:border-gray-800 hover:border-pink-400 transition text-xs">
+            <div class="font-semibold text-pink-600 dark:text-pink-400 mb-0.5">🌐 Chrome Quick Queries</div>
+            <div class="text-gray-600 dark:text-gray-300">See how Poogle Crap answers from the omnibox</div>
+          </button>
+        </div>
+
+        <!-- Chat / AI Mode Feed -->
+        <div id="shitmini-chat-feed" class="space-y-4 max-h-[380px] overflow-y-auto pr-1 mb-6"></div>
+      </div>
+
+      <!-- Bottom Prompt Bar -->
+      <form id="shitmini-prompt-form" class="w-full bg-white dark:bg-[#1e1f20] border border-gray-300 dark:border-gray-700 rounded-3xl p-2 pl-4 shadow-md flex items-center gap-2">
+        <input id="shitmini-prompt-input" type="text" placeholder="Ask Shitmini App or AI Mode in Search..." class="w-full bg-transparent text-sm focus:outline-none text-gray-900 dark:text-gray-100" />
+        <button type="submit" class="px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-95 text-white text-xs font-semibold shrink-0 transition">
+          Send ✦
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 4: POOGLE CRAP (GOOGLE CHROME CLONE FOR QUICK QUERIES)           -->
+  <!-- ===================================================================== -->
+  <section id="platform-view-crap" class="hidden flex-1 flex flex-col bg-gray-100 dark:bg-[#18191a]">
+    <!-- Chrome Window Frame & Tab Strip -->
+    <div class="bg-gray-200 dark:bg-[#202124] pt-2 px-3 flex items-center gap-2 border-b border-gray-300 dark:border-gray-800">
+      <!-- Traffic Lights -->
+      <div class="flex items-center gap-1.5 px-2 shrink-0">
+        <span class="w-3 h-3 rounded-full bg-[#EA4335] inline-block"></span>
+        <span class="w-3 h-3 rounded-full bg-[#FBBC05] inline-block"></span>
+        <span class="w-3 h-3 rounded-full bg-[#34A853] inline-block"></span>
+      </div>
+
+      <!-- Dynamic Tabs Strip -->
+      <div id="crap-tabs-container" class="flex items-center gap-1 overflow-x-auto no-scrollbar flex-1"></div>
+
+      <!-- Add New Tab Button -->
+      <button type="button" id="crap-add-tab-btn" class="w-7 h-7 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 flex items-center justify-center text-sm font-bold shrink-0" title="New Tab">+</button>
+    </div>
+
+    <!-- Chrome Omnibox Toolbar (Accessible directly inside Chrome for quick queries) -->
+    <div class="bg-white dark:bg-[#292a2d] px-3 sm:px-4 py-2 border-b border-gray-200 dark:border-gray-800 flex flex-wrap items-center gap-2">
+      <div class="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+        <button type="button" id="crap-home-tab-btn" class="p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-xs" title="New Tab">🏠</button>
+        <button type="button" id="crap-reload-btn" data-crap-reload="1" class="p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-xs" title="Reload">↻</button>
+      </div>
+
+      <!-- Omnibox Address & Quick Query Bar -->
+      <form id="crap-omnibox-form" class="flex-1 min-w-[200px] flex items-center bg-gray-100 dark:bg-[#202124] border border-gray-300 dark:border-gray-700 rounded-full px-3.5 py-1.5 gap-2">
+        <span class="text-xs px-2 py-0.5 rounded-full bg-blue-600 text-white font-semibold shrink-0">@shitmini</span>
+        <input id="crap-omnibox-input" type="text" placeholder="Type a URL or quick query right inside Poogle Crap..." class="w-full bg-transparent text-xs sm:text-sm focus:outline-none text-gray-900 dark:text-gray-100" aria-label="Poogle Crap Omnibox Quick Query Bar" />
+        <button type="submit" class="text-xs font-semibold text-blue-600 dark:text-blue-400 shrink-0 hover:underline">Quick Query</button>
+      </form>
+
+      <!-- Right Chrome Extensions & Side Panel Toggles -->
+      <div class="flex items-center gap-1.5">
+        <button type="button" id="crap-sidepanel-toggle-btn" class="px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 text-xs font-semibold hover:bg-blue-100 transition">
+          ✦ Side Panel AI
+        </button>
+        <button type="button" id="crap-devtools-toggle-btn" class="px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium hover:bg-gray-200 transition">
+          🛠️ Inspect
+        </button>
+      </div>
+    </div>
+
+    <!-- Chrome Bookmarks Bar -->
+    <div class="bg-white dark:bg-[#292a2d] px-4 py-1.5 border-b border-gray-200 dark:border-gray-800 flex items-center gap-3 overflow-x-auto no-scrollbar text-xs">
+      <span class="text-gray-400 font-medium shrink-0">Bookmarks:</span>
+      <button type="button" data-launch-platform="poogle-home" class="hover:underline text-gray-700 dark:text-gray-300 shrink-0">🔍 Poogle Home</button>
+      <button type="button" data-launch-platform="stool" class="hover:underline text-gray-700 dark:text-gray-300 shrink-0">☁️ Poogle Stool</button>
+      <button type="button" data-launch-platform="poop" class="hover:underline text-gray-700 dark:text-gray-300 shrink-0">🚀 Poogle Poop</button>
+      <button type="button" data-launch-platform="shitmini" class="hover:underline text-gray-700 dark:text-gray-300 shrink-0">✦ Shitmini App</button>
+      <button type="button" data-launch-platform="about" class="hover:underline text-blue-600 dark:text-blue-400 font-medium shrink-0">👨‍💻 Developer: Mr. Doo-doo</button>
+    </div>
+
+    <!-- Chrome Body: Main Viewport + Quick Query AI Side Panel -->
+    <div class="flex-1 grid grid-cols-1 lg:grid-cols-12 bg-white dark:bg-[#202124]">
+      <div id="crap-browser-viewport" class="lg:col-span-8 p-4 sm:p-6 overflow-y-auto"></div>
+
+      <!-- Chrome Built-In Quick Query Side Panel -->
+      <aside id="crap-side-panel" class="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-gray-200 dark:border-gray-800 bg-gray-50/70 dark:bg-[#1e1f20] p-4 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-xs sm:text-sm flex items-center gap-1.5">
+              <span class="text-blue-600">✦</span><span>Poogle Crap Quick Queries</span>
+            </span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-medium">Chrome Built-In AI</span>
+          </div>
+          <p class="text-[11px] text-gray-500 dark:text-gray-400 mb-3">
+            Accessible directly inside Chrome (Poogle Crap) for quick queries without leaving your active webpage.
+          </p>
+          <div id="crap-quick-query-feed" class="space-y-2.5 max-h-72 overflow-y-auto pr-1"></div>
+        </div>
+
+        <form id="crap-sidepanel-form" class="mt-4 pt-3 border-t border-gray-200 dark:border-gray-800 flex gap-1.5">
+          <input id="crap-sidepanel-input" type="text" placeholder="Ask a quick query in Chrome..." class="w-full rounded-xl bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 px-3 py-1.5 text-xs focus:outline-none" />
+          <button type="submit" class="px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shrink-0">Ask</button>
+        </form>
+      </aside>
+    </div>
+
+    <!-- Chrome DevTools Inspect Drawer -->
+    <div id="crap-devtools-drawer" class="hidden bg-gray-950 text-gray-200 border-t border-gray-800 p-3 font-mono text-xs">
+      <div class="flex items-center justify-between border-b border-gray-800 pb-1.5 mb-2 text-[11px] text-gray-400">
+        <span>Poogle Crap DevTools • Elements | Console | Network | Lighthouse: 100/100</span>
+        <span class="text-emerald-400">Responsive Check: PASS (No UI Breakage)</span>
+      </div>
+      <div class="text-emerald-300">
+        &gt; console.info("Poogle Ecosystem v2026 — Engineered by Mr. Doo-doo | Hosted on Netlify");
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- AUTHENTIC GOOGLE FOOTER WITH MR. DOO-DOO DEVELOPER CREDIT             -->
+  <!-- ===================================================================== -->
+  <footer class="w-full bg-[#f2f2f2] dark:bg-[#171717] text-[#70757a] dark:text-[#9aa0a6] text-xs border-t border-[#dadce0] dark:border-[#3c4043] mt-auto">
+    <!-- Top Location & Architect Row -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 border-b border-[#dadce0] dark:border-[#3c4043] flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span>India</span>
+        <span>•</span>
+        <span class="text-gray-600 dark:text-gray-300 font-medium">Developed &amp; Engineered by <strong class="text-blue-600 dark:text-blue-400">Mr. Doo-doo</strong></span>
+      </div>
+      <div class="text-[11px]">
+        Netlify Production Build • 100% Responsive Across All Screen Resolutions
+      </div>
+    </div>
+
+    <!-- Bottom Links & Settings Row -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex flex-wrap items-center justify-between gap-4 relative">
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+        <button type="button" class="about-modal-trigger hover:underline">About Poogle &amp; Mr. Doo-doo</button>
+        <button type="button" data-launch-platform="stool" class="hover:underline">Poogle Stool (Cloud)</button>
+        <button type="button" data-launch-platform="poop" class="hover:underline">Poogle Poop (Antigravity)</button>
+        <button type="button" data-launch-platform="shitmini" class="hover:underline">Shitmini App &amp; Search</button>
+        <button type="button" data-launch-platform="crap" class="hover:underline">Poogle Crap (Chrome)</button>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+        <button type="button" class="about-modal-trigger hover:underline font-semibold text-gray-700 dark:text-gray-200">Credit: Mr. Doo-doo</button>
+        <button type="button" class="theme-toggle-trigger hover:underline theme-mode-label">Dark theme: Off</button>
+        <button type="button" id="footer-settings-btn" class="hover:underline">Settings</button>
+      </div>
+
+      <!-- Footer Settings Popover -->
+      <div id="settings-menu-popover" class="hidden absolute right-4 bottom-12 w-56 bg-white dark:bg-[#303134] rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50 text-gray-800 dark:text-gray-200">
+        <button type="button" class="theme-toggle-trigger w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-xs">Toggle Dark / Light Theme</button>
+        <button type="button" data-launch-platform="shitmini" data-launch-mode="search_ai" class="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-xs">AI Mode Search Preferences</button>
+        <button type="button" data-launch-platform="about" class="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-xs">Developer Credit: Mr. Doo-doo</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- MODALS: VOICE SEARCH, POOGLE LENS, AND ABOUT MR. DOO-DOO              -->
+  <!-- ===================================================================== -->
+
+  <!-- Voice Search Modal -->
+  <div id="voice-search-modal" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#303134] rounded-3xl max-w-md w-full p-6 text-center shadow-2xl border border-gray-200 dark:border-gray-700">
+      <div class="flex justify-between items-center mb-4">
+        <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Poogle Voice Search</span>
+        <button type="button" id="voice-modal-close" class="text-gray-400 hover:text-gray-700 dark:hover:text-white text-xl leading-none">×</button>
+      </div>
+      <div class="my-6 flex items-center justify-center">
+        <div class="w-20 h-20 rounded-full bg-red-500/20 flex items-center justify-center voice-pulse">
+          <div class="w-14 h-14 rounded-full bg-[#EA4335] text-white flex items-center justify-center text-2xl shadow-lg">🎙️</div>
+        </div>
+      </div>
+      <h3 class="text-lg font-semibold mb-1">Listening...</h3>
+      <p class="text-xs text-gray-500 dark:text-gray-400 mb-6">Speak now or click below to test instant voice transcription across Poogle.</p>
+      <button type="button" id="voice-simulate-btn" class="w-full py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold transition">
+        Simulate Voice Query: "Poogle Poop &amp; Shitmini AI"
+      </button>
+    </div>
+  </div>
+
+  <!-- Poogle Lens Visual Search Modal -->
+  <div id="lens-search-modal" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#303134] rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-gray-200 dark:border-gray-700">
+      <div class="flex justify-between items-center mb-3">
+        <span class="font-bold text-sm flex items-center gap-2">📷 Search any image with Poogle Lens</span>
+        <button type="button" id="lens-modal-close" class="text-gray-400 hover:text-gray-700 dark:hover:text-white text-xl leading-none">×</button>
+      </div>
+      <div class="border-2 border-dashed border-blue-400 dark:border-blue-500 rounded-2xl p-6 text-center bg-blue-50/40 dark:bg-gray-800/40 mb-4">
+        <div class="text-3xl mb-2">🖼️</div>
+        <p class="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-200">Select a sample visual target to inspect with Poogle Lens</p>
+        <p class="text-[11px] text-gray-500 mt-1">Powered by Shitmini Multimodal Vision • Engineered by Mr. Doo-doo</p>
+      </div>
+      <div class="grid grid-cols-2 gap-2.5">
+        <button type="button" data-lens-preset="Poogle Stool Cloud Architecture" class="p-2.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 text-xs font-medium text-left">
+          ☁️ Scan Cloud Diagram (Poogle Stool)
+        </button>
+        <button type="button" data-lens-preset="Poogle Poop Android Studio Canary" class="p-2.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 text-xs font-medium text-left">
+          🚀 Scan Kotlin Code (Poogle Poop)
+        </button>
+        <button type="button" data-lens-preset="Shitmini App & Search AI Mode" class="p-2.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 text-xs font-medium text-left">
+          ✦ Scan Research Paper (Shitmini)
+        </button>
+        <button type="button" data-lens-preset="Poogle Crap Browser Quick Queries" class="p-2.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 text-xs font-medium text-left">
+          🌐 Scan Webpage UI (Poogle Crap)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Poogle & Developer Credit Modal -->
+  <div id="about-modal" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#303134] rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-gray-200 dark:border-gray-700">
+      <div class="flex justify-between items-center mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Official Platform Credits</span>
+        <button type="button" id="about-modal-close" class="text-gray-400 hover:text-gray-700 dark:hover:text-white text-xl leading-none">×</button>
+      </div>
+      <h3 class="text-xl font-bold mb-2">Poogle Ecosystem — Engineered by Mr. Doo-doo</h3>
+      <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+        <strong>Poogle</strong> is a responsive, Netlify-ready web application designed and built by <strong>Mr. Doo-doo</strong>. It faithfully recreates the Google experience and integrates four complete platforms:
+      </p>
+      <ul class="space-y-2 text-xs text-gray-700 dark:text-gray-200 mb-5">
+        <li>• <strong>Poogle Stool</strong> (Google Cloud): Available on Google Cloud for enterprise developers and builders.</li>
+        <li>• <strong>Poogle Poop</strong> (Google Antigravity): Available for Google AI Ultra subscribers inside Poogle's agentic development platform (standalone or via Android Studio Canary).</li>
+        <li>• <strong>Shitmini App &amp; Search</strong> (Gemini App &amp; Search): Available for Google AI Pro and Ultra subscribers inside the Shitmini app and AI Mode in Search.</li>
+        <li>• <strong>Poogle Crap</strong> (Google Chrome): Accessible directly inside Chrome for quick queries.</li>
+      </ul>
+      <div class="flex justify-end">
+        <button type="button" id="about-modal-done-btn" class="px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold">
+          Awesome, Got It!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Netlify Configuration for Poogle Ecosystem — Engineered by Mr. Doo-doo
+[build]
+  publish = "."
+  command = "echo 'Poogle static bundle ready for Netlify deployment!'"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=3600"

@@ -1,0 +1,21 @@
+{
+  "name": "Poogle Ecosystem — By Mr. Doo-doo",
+  "short_name": "Poogle",
+  "description": "Poogle parent platform integrating Poogle Stool, Poogle Poop, Shitmini App & Search, and Poogle Crap.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4285F4",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}
